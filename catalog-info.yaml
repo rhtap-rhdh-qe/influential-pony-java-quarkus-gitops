@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: influential-pony-java-quarkus-gitops
+  description: This is GitOps manifest for influential-pony-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: influential-pony-java-quarkus
+    janus-idp.io/tekton: influential-pony-java-quarkus 
+    backstage.io/kubernetes-id: influential-pony-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:influential-pony-java-quarkus
